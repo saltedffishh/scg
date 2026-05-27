@@ -1,0 +1,47 @@
+# Data (large files)
+data_E13/
+data_P21/
+data_P22/
+data_E13.zip
+data_P21.zip
+data_P22.zip
+*.gz
+
+# Tensorboard runs
+runs/
+
+# Generated graphs
+graph_E13/
+graph_P21/
+graph_P22/
+graph_combined/
+
+# Visualization outputs
+vis_E13/
+vis_P21/
+vis_combined/
+
+# Training outputs
+output/
+output_sup/
+output_unsup/
+
+# Model checkpoints and embeddings (large files)
+*.npy
+*.npz
+*.pt
+*.pth
+
+# Python cache
+__pycache__/
+*.pyc
+.DS_Store
+
+# MarsGT reference repo
+marsgt/
+
+# PDFs and images
+*.pdf
+*.png
+*.jpg
+*.svg

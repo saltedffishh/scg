@@ -79,15 +79,37 @@ L = L_recon + λ1·L_align + λ2·L_spatial + λ3·L_gp + λ4·L_rna + λ5·L_at
 - NMI=0.419, ARI=0.248
 - 架构方向验证通过，主要瓶颈是SVD维度太低和epoch太少
 
+### v2 完整结果 (250 epochs, hidden=128, GPU)
+- Supervised best: avg NMI=0.5423 (per_time KMeans)
+- Unsupervised best: avg NMI=0.4192 (joint_e13p21 KMeans) — **真实基线** (无泄露)
+- 详细 6 指标 + Leiden 对比见 [[project_experiments_results]]
+
 ### GPU使用 (5070 Ti, 16GB)
+**hidden=256 会 OOM**, 使用 hidden=128:
 ```bash
-python unsupervised/train.py --device cuda --amp --epochs 300 --svd_dim 200
-python supervised/train.py --device cuda --amp --epochs 300 --svd_dim 200
+python unsupervised/train.py --device cuda --amp --epochs 250 --hidden 128 --svd_dim 100
+python supervised/train.py --device cuda --amp --epochs 250 --hidden 128 --svd_dim 100
 ```
 
-### 待改进
-- [ ] GPU完整训练并对比监督vs无监督
-- [ ] SVD dim增大 (100→200+) 提升RNA方差解释率
-- [ ] 消融实验验证每个loss贡献
-- [ ] 跨时间spot对应方法
-- [ ] Gene-Peak score阈值确定
+### 评估指标 (6 个)
+NMI / AMI / ARI / FMI / MI / ACC，ACC 通过 Hungarian matching (scipy.linear_sum_assignment) 计算。
+实现位置: `supervised/model.py` + `unsupervised/model.py` 里 `_cluster_acc()` 和 `_all_metrics()`。
+
+### 聚类口径 (3 种 cluster_mode)
+- **per_time**: E13/P21 各自独立 KMeans (历史最稳, sup NMI=0.5423)
+- **joint_e13p21**: E13+P21 池化后一起 KMeans, P22 不参与
+- **joint_all**: E13+P21+P22 全部池化后 KMeans (P22 干扰 unsup 最敏感)
+训练参数: `--joint_cluster_e13p21` 或 `--joint_cluster_all`
+
+### Leiden 聚类 (生信常用)
+`eval_leiden.py` — 加载已训好的 spot_emb.npy 跑 Leiden 后处理 (scanpy + leidenalg)，不需要重训。
+HGNA conda env 有 scanpy 1.11 + leidenalg 0.11。
+扫 resolution=0.5/1.0/1.5。详见 [[project_experiments_results]]。
+
+### 可视化
+`visualize.py` 出 3 张图: umap_by_time / umap_by_cluster / spatial_clusters。详见 [[project_visualization_findings]]。
+
+### 实验结果 / 待改进
+- 监督 vs 无监督完整对比: [[project_experiments_results]]
+- 监督模型有弱标签泄露: [[project_data_leakage]]
+- 无监督改进方向: [[project_unsupervised_improvements]]

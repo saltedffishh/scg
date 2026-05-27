@@ -1,0 +1,130 @@
+spots: 13775, joint-labelled: 4560
+
+
+##############  RESOLUTION = 0.5  ##############
+
+==============================================================================
+ supervised (joint_all 250ep, hidden=128) [embedding only — eval here]
+   emb=/home/altedfish/scg/output_sup_joint/spot_emb.npy  resolution=0.5  n_neighbors=15
+==============================================================================
+
+[mode=per_time]  n_clusters={'E13': 11, 'P21': 7}
+  E13   | NMI=0.5021  AMI=0.4954  ARI=0.3548  FMI=0.4255  MI=1.1677  ACC=0.5487
+  P21   | NMI=0.5603  AMI=0.5580  ARI=0.5394  FMI=0.6109  MI=1.1009  ACC=0.6603
+  avg   | NMI=0.5312  AMI=0.5267  ARI=0.4471  FMI=0.5182  MI=1.1343  ACC=0.6045
+
+[mode=joint_e13p21]  n_clusters={'pool': 12}
+  E13   | NMI=0.5007  AMI=0.4962  ARI=0.3749  FMI=0.4801  MI=1.0370  ACC=0.5825
+  P21   | NMI=0.5427  AMI=0.5407  ARI=0.4731  FMI=0.5849  MI=0.9712  ACC=0.6372
+  avg   | NMI=0.5217  AMI=0.5185  ARI=0.4240  FMI=0.5325  MI=1.0041  ACC=0.6099
+
+[mode=joint_all]  n_clusters={'pool': 14}
+  E13   | NMI=0.4456  AMI=0.4397  ARI=0.2541  FMI=0.4278  MI=0.8506  ACC=0.4765
+  P21   | NMI=0.5482  AMI=0.5450  ARI=0.4450  FMI=0.5451  MI=1.0635  ACC=0.5992
+  avg   | NMI=0.4969  AMI=0.4924  ARI=0.3496  FMI=0.4864  MI=0.9570  ACC=0.5378
+
+==============================================================================
+ unsupervised (joint_e13p21 250ep, hidden=128) [embedding only — eval here]
+   emb=/home/altedfish/scg/output_unsup_joint_e13p21/spot_emb.npy  resolution=0.5  n_neighbors=15
+==============================================================================
+
+[mode=per_time]  n_clusters={'E13': 5, 'P21': 4}
+  E13   | NMI=0.3243  AMI=0.3200  ARI=0.1982  FMI=0.3485  MI=0.6227  ACC=0.3649
+  P21   | NMI=0.3773  AMI=0.3755  ARI=0.2701  FMI=0.4336  MI=0.6384  ACC=0.5103
+  avg   | NMI=0.3508  AMI=0.3477  ARI=0.2341  FMI=0.3911  MI=0.6305  ACC=0.4376
+
+[mode=joint_e13p21]  n_clusters={'pool': 6}
+  E13   | NMI=0.2576  AMI=0.2547  ARI=0.1432  FMI=0.3813  MI=0.4150  ACC=0.3182
+  P21   | NMI=0.3213  AMI=0.3198  ARI=0.1878  FMI=0.4190  MI=0.4842  ACC=0.4383
+  avg   | NMI=0.2895  AMI=0.2873  ARI=0.1655  FMI=0.4001  MI=0.4496  ACC=0.3783
+
+[mode=joint_all]  n_clusters={'pool': 4}
+  E13   | NMI=0.0000  AMI=0.0000  ARI=0.0000  FMI=0.3317  MI=0.0000  ACC=0.1984
+  P21   | NMI=0.0083  AMI=0.0065  ARI=-0.0013  FMI=0.3641  MI=0.0088  ACC=0.1917
+  avg   | NMI=0.0041  AMI=0.0033  ARI=-0.0006  FMI=0.3479  MI=0.0044  ACC=0.1951
+
+
+##############  RESOLUTION = 1.0  ##############
+
+==============================================================================
+ supervised (joint_all 250ep, hidden=128) [embedding only — eval here]
+   emb=/home/altedfish/scg/output_sup_joint/spot_emb.npy  resolution=1.0  n_neighbors=15
+==============================================================================
+
+[mode=per_time]  n_clusters={'E13': 14, 'P21': 12}
+  E13   | NMI=0.5032  AMI=0.4946  ARI=0.3543  FMI=0.4218  MI=1.2093  ACC=0.5423
+  P21   | NMI=0.5626  AMI=0.5589  ARI=0.5167  FMI=0.5793  MI=1.2534  ACC=0.6190
+  avg   | NMI=0.5329  AMI=0.5268  ARI=0.4355  FMI=0.5005  MI=1.2314  ACC=0.5807
+
+[mode=joint_e13p21]  n_clusters={'pool': 20}
+  E13   | NMI=0.5003  AMI=0.4931  ARI=0.3540  FMI=0.4251  MI=1.1630  ACC=0.5400
+  P21   | NMI=0.5631  AMI=0.5600  ARI=0.5074  FMI=0.5730  MI=1.1764  ACC=0.6203
+  avg   | NMI=0.5317  AMI=0.5266  ARI=0.4307  FMI=0.4991  MI=1.1697  ACC=0.5802
+
+[mode=joint_all]  n_clusters={'pool': 21}
+  E13   | NMI=0.4951  AMI=0.4894  ARI=0.3686  FMI=0.4749  MI=1.0268  ACC=0.5606
+  P21   | NMI=0.5150  AMI=0.5091  ARI=0.4321  FMI=0.5184  MI=1.0657  ACC=0.5769
+  avg   | NMI=0.5050  AMI=0.4993  ARI=0.4003  FMI=0.4966  MI=1.0463  ACC=0.5687
+
+==============================================================================
+ unsupervised (joint_e13p21 250ep, hidden=128) [embedding only — eval here]
+   emb=/home/altedfish/scg/output_unsup_joint_e13p21/spot_emb.npy  resolution=1.0  n_neighbors=15
+==============================================================================
+
+[mode=per_time]  n_clusters={'E13': 6, 'P21': 6}
+  E13   | NMI=0.3343  AMI=0.3293  ARI=0.2129  FMI=0.3396  MI=0.6775  ACC=0.3859
+  P21   | NMI=0.4289  AMI=0.4264  ARI=0.3722  FMI=0.4716  MI=0.8241  ACC=0.5765
+  avg   | NMI=0.3816  AMI=0.3778  ARI=0.2926  FMI=0.4056  MI=0.7508  ACC=0.4812
+
+[mode=joint_e13p21]  n_clusters={'pool': 10}
+  E13   | NMI=0.3357  AMI=0.3306  ARI=0.2124  FMI=0.3413  MI=0.6779  ACC=0.3827
+  P21   | NMI=0.3979  AMI=0.3961  ARI=0.2887  FMI=0.4490  MI=0.6735  ACC=0.5209
+  avg   | NMI=0.3668  AMI=0.3633  ARI=0.2506  FMI=0.3952  MI=0.6757  ACC=0.4518
+
+[mode=joint_all]  n_clusters={'pool': 8}
+  E13   | NMI=0.2460  AMI=0.2444  ARI=0.1242  FMI=0.3909  MI=0.3664  ACC=0.3050
+  P21   | NMI=0.1905  AMI=0.1852  ARI=0.0376  FMI=0.3587  MI=0.2460  ACC=0.3085
+  avg   | NMI=0.2182  AMI=0.2148  ARI=0.0809  FMI=0.3748  MI=0.3062  ACC=0.3067
+
+
+##############  RESOLUTION = 1.5  ##############
+
+==============================================================================
+ supervised (joint_all 250ep, hidden=128) [embedding only — eval here]
+   emb=/home/altedfish/scg/output_sup_joint/spot_emb.npy  resolution=1.5  n_neighbors=15
+==============================================================================
+
+[mode=per_time]  n_clusters={'E13': 21, 'P21': 17}
+  E13   | NMI=0.4900  AMI=0.4775  ARI=0.3063  FMI=0.3771  MI=1.2916  ACC=0.4504
+  P21   | NMI=0.5397  AMI=0.5344  ARI=0.3742  FMI=0.4590  MI=1.3079  ACC=0.4585
+  avg   | NMI=0.5149  AMI=0.5060  ARI=0.3402  FMI=0.4181  MI=1.2997  ACC=0.4544
+
+[mode=joint_e13p21]  n_clusters={'pool': 25}
+  E13   | NMI=0.5045  AMI=0.4966  ARI=0.3451  FMI=0.4148  MI=1.1978  ACC=0.5359
+  P21   | NMI=0.5631  AMI=0.5591  ARI=0.5020  FMI=0.5661  MI=1.2551  ACC=0.6077
+  avg   | NMI=0.5338  AMI=0.5278  ARI=0.4236  FMI=0.4904  MI=1.2265  ACC=0.5718
+
+[mode=joint_all]  n_clusters={'pool': 24}
+  E13   | NMI=0.5090  AMI=0.5028  ARI=0.3837  FMI=0.4799  MI=1.0855  ACC=0.5834
+  P21   | NMI=0.5137  AMI=0.5068  ARI=0.4122  FMI=0.5148  MI=1.0258  ACC=0.5748
+  avg   | NMI=0.5114  AMI=0.5048  ARI=0.3980  FMI=0.4973  MI=1.0557  ACC=0.5791
+
+==============================================================================
+ unsupervised (joint_e13p21 250ep, hidden=128) [embedding only — eval here]
+   emb=/home/altedfish/scg/output_unsup_joint_e13p21/spot_emb.npy  resolution=1.5  n_neighbors=15
+==============================================================================
+
+[mode=per_time]  n_clusters={'E13': 11, 'P21': 14}
+  E13   | NMI=0.3587  AMI=0.3499  ARI=0.2457  FMI=0.3311  MI=0.8310  ACC=0.4367
+  P21   | NMI=0.4002  AMI=0.3942  ARI=0.4100  FMI=0.4839  MI=0.9134  ACC=0.5209
+  avg   | NMI=0.3794  AMI=0.3721  ARI=0.3278  FMI=0.4075  MI=0.8722  ACC=0.4788
+
+[mode=joint_e13p21]  n_clusters={'pool': 12}
+  E13   | NMI=0.3309  AMI=0.3258  ARI=0.2097  FMI=0.3384  MI=0.6688  ACC=0.3827
+  P21   | NMI=0.4232  AMI=0.4206  ARI=0.3586  FMI=0.4654  MI=0.8048  ACC=0.5689
+  avg   | NMI=0.3770  AMI=0.3732  ARI=0.2842  FMI=0.4019  MI=0.7368  ACC=0.4758
+
+[mode=joint_all]  n_clusters={'pool': 18}
+  E13   | NMI=0.2527  AMI=0.2498  ARI=0.1426  FMI=0.3795  MI=0.4078  ACC=0.3187
+  P21   | NMI=0.4236  AMI=0.4183  ARI=0.2699  FMI=0.4359  MI=0.7367  ACC=0.5284
+  avg   | NMI=0.3382  AMI=0.3341  ARI=0.2063  FMI=0.4077  MI=0.5723  ACC=0.4236
