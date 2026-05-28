@@ -1,6 +1,7 @@
 - [Graph Building Project](project_graph_building.md) — 空间多组学异构图建图 (E13/P21/P22统一图, 4种边, gene/peak共享, 时间标签)
 - [Experiments Results](project_experiments_results.md) — 监督/无监督 250ep hidden=128 完整结果 + Leiden vs KMeans 对比
 - [Data Leakage](project_data_leakage.md) — 监督模型弱标签泄露分析 (RNA/Joint NMI=0.65)
+- [Semi-Supervised](project_semi_supervised.md) — label_ratio 扫描: 10% 标签拿一半增益, 30% 拿 88%, 收益严重饱和
 - [Unsupervised Improvements](project_unsupervised_improvements.md) — 提升无监督效果的待办方向 (SVD/spatial/MAE/对比/P22)
 - [Visualization Findings](project_visualization_findings.md) — UMAP + 空间分群可视化产物及视觉对比
 - [User Background](user_background.md) — 空间多组学数据分析用户

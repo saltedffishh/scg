@@ -29,3 +29,4 @@ metadata:
 - 评估用与训练 label 不同源的下游任务: marker gene 重建、GP 边召回、held-out spot 表达预测
 - 训练改对比/掩码自监督 (走无监督路线，见 [[project_unsupervised_improvements]])
 - 报告时同时列 RNA→Joint / ATAC→Joint 作为上下界参照
+- **走半监督路线**: 见 [[project_semi_supervised]], 10% 标签下 NMI=0.48 仍显著高于 unsup, 泄露强度按比例稀释
